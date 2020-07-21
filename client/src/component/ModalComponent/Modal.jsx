@@ -64,7 +64,10 @@ export default function TransitionsModal(props) {
               // Material design options
               chart: {
                 title: "Historic Data for " + props.cropName,
-                subtitle: "Predicted Value is " + props.predictData,
+                subtitle:
+                  "Predicted Yield for 2020 is " +
+                  props.predictData +
+                  " (Tonnes/Hectare)",
               },
               vAxis: "Yield(Tonnes/Hectare)",
             }}

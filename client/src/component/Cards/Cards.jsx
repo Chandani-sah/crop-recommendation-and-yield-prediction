@@ -44,7 +44,7 @@ export default function Cards({ data, city }) {
         var res = [];
         var predictData = [];
         result.data.map((x, index) => {
-          res.push(["Year", "Yield"]);
+          res.push(["Year", "Yield (Tonnes/Hectare)"]);
           console.log("result if push", res);
 
           x.data.map((y, i) => {
@@ -54,7 +54,13 @@ export default function Cards({ data, city }) {
             }
           });
         });
+
+        res.forEach((element) => {
+          element[0] = String(element[0]);
+        });
+
         setGraphData(res);
+        console.log("Data to be analysed ", predictData);
         const predictResult = regression.linear(predictData, {
           order: 2,
           precision: 2,

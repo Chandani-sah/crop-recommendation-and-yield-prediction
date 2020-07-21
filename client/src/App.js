@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { NativeSelect, FormControl, CircularProgress } from "@material-ui/core";
-import { Spinner } from "react-bootstrap";
 import axios from "axios";
 import Cards from "./component/Cards/Cards";
 import styles from "./component/DistrictPicker/DistrictPicker.module.css";
@@ -79,7 +78,6 @@ function App() {
             <option value="Varanasi">Varanasi</option>
           </NativeSelect>
         </FormControl>
-        {/* <GoogleMap /> */}
       </div>
       {loading ? (
         <CircularProgress
@@ -91,7 +89,7 @@ function App() {
           }}
         />
       ) : (
-        <Cards data={cropData ? cropData : ""} city={district}/>
+        <Cards data={cropData ? cropData : ""} city={district} />
       )}
     </div>
   );
